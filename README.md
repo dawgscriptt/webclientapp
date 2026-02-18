@@ -3,7 +3,7 @@
 
 **A multi-hub, multilingual social learning/community app.**
 Features hub-based feeds, threaded comments, auth, DMs, and a comprehensive admin panel.
-<img width="1898" height="860" alt="Screenshot_1" src="https://github.com/user-attachments/assets/0c7a86e1-4d65-4f9c-8443-1568a6cf73a6" />
+<img width="1898" height="860" alt="Screenshot_1" src="https://github.com/user-attachments/assets/279abacf-953d-4653-8e1d-9b8b757bde95" />
 
 ---
 
