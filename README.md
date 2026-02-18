@@ -221,4 +221,4 @@ mkdir -p public/uploads/ public/uploads/avatars/ public/uploads/posts/
 ```
 ## Project status
 
-Not a complete product yet — this repo currently contains only the **community** portion.
+Not a complete product yet — this repo currently contains only the **community** portion..
