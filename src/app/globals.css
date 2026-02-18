@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Reddit-like Theme Tokens
+   ========================= */
+:root {
+  /* Light */
+  --bg: 210 18% 92%;            /* reddit light bg */
+  --fg: 222 22% 12%;
+
+  --card: 0 0% 100%;
+  --card-fg: 222 22% 12%;
+
+  --muted: 210 18% 96%;
+  --muted-fg: 220 9% 46%;
+
+  --border: 220 13% 86%;
+  --ring: 222 22% 12%;
+
+  /* Reddit orange */
+  --brand: 24 100% 50%;
+  --brand-fg: 0 0% 100%;
+
+  --danger: 0 84% 60%;
+  --danger-fg: 0 0% 100%;
+  
+   --convos-blue: 221 83% 53%;
+  --convos-red: 0 84% 60%;
+  --convos-white: 0 0% 100%;
+}
+
+.dark {
+  /* Dark */
+  --bg: 222 22% 8%;
+  --fg: 210 40% 96%;
+
+  --card: 222 22% 11%;
+  --card-fg: 210 40% 96%;
+
+  --muted: 223 18% 14%;
+  --muted-fg: 215 16% 70%;
+
+  --border: 223 18% 20%;
+  --ring: 210 40% 96%;
+
+  --brand: 24 100% 55%;
+  --brand-fg: 0 0% 100%;
+
+  --danger: 0 84% 60%;
+  --danger-fg: 0 0% 100%;
+  
+  --convos-blue: 217 91% 60%;
+  --convos-red: 0 84% 60%;
+  --convos-white: 0 0% 100%;
+  
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: hsl(var(--bg));
+  color: hsl(var(--fg));
+}
+
+/* Typography tweaks (Reddit yoğunluğu) */
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* =========================
+   Component primitives
+   ========================= */
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-6xl px-4 md:px-6;
+  }
+
+  /* Flat reddit cards */
+  .card {
+    @apply rounded-xl border border-border bg-card text-cardFg;
+    box-shadow: none !important;
+  }
+
+  .card-pad {
+    @apply p-3 md:p-3;
+  }
+
+  .card-hover {
+    @apply transition;
+  }
+  .card-hover:hover {
+    border-color: hsl(var(--brand) / 0.25);
+  }
+
+  .muted {
+    @apply text-sm text-mutedFg;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full rounded-xl border border-border bg-card px-3 py-2 text-sm outline-none;
+  }
+  .input:focus {
+    border-color: hsl(var(--brand) / 0.35);
+    box-shadow: 0 0 0 3px hsl(var(--brand) / 0.18);
+  }
+
+  textarea.input {
+    @apply min-h-[120px];
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl border border-border bg-card px-3 py-2 text-sm font-medium transition;
+  }
+  .btn:hover {
+    background: hsl(var(--muted));
+  }
+
+  .btn-primary {
+    border-color: transparent !important;
+    background: hsl(var(--brand));
+    color: hsl(var(--brand-fg));
+  }
+  .btn-primary:hover {
+    background: hsl(var(--brand) / 0.9);
+  }
+
+  .btn-danger {
+    border-color: transparent !important;
+    background: hsl(var(--danger));
+    color: hsl(var(--danger-fg));
+  }
+  .btn-danger:hover {
+    background: hsl(var(--danger) / 0.9);
+  }
+
+  /* Pills / badges */
+  .pill {
+    @apply inline-flex items-center rounded-full border border-border bg-muted px-2.5 py-1 text-xs;
+    color: hsl(var(--muted-fg));
+  }
+
+  /* Simple divider */
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: hsl(var(--border));
+  }
+
+  /* Pre blocks */
+  pre {
+    @apply rounded-xl border border-border p-3 overflow-auto;
+    background: hsl(var(--muted));
+  }
+}
+
+/* Small UX details */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
